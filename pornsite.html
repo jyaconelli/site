@@ -1,0 +1,23 @@
+<head>
+  <title>pornsite</title>
+</head>
+
+<body>
+	<div class="container">
+		<header>
+		  <h1>Site!</h1>
+		</header>
+		
+		<ul>
+			{{#each videos}}
+				{{> video}}
+			{{/each}}
+		</ul>
+		
+	</div>
+
+</body>
+
+<template name="video">
+	<li>{{title}}</li>
+</template>
