@@ -13,11 +13,11 @@
 				{{> video}}
 			{{/each}}
 		</ul>
-		
+	
 	</div>
 
 </body>
 
 <template name="video">
-	<li>{{title}}</li>
+	<li><a href="{{url}}">{{title}}</a>{{tags}}</li>
 </template>
