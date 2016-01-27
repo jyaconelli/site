@@ -19,7 +19,7 @@ Meteor.startup(function() {
 		
 		var videos = [];
 		cursor.each(function(data, i, cursor){
-			videos.push({title:data.n.properties.get('title'), url:data.n.properties.get('url'), tags:data.m.properties.get('name')});
+			videos.push({title:data.n.properties.get('title'), url:data.n.properties.get('url'), tags:data.m.properties.get('name'), _id:data.n.properties.get('id')});
 		});
 		
 		/*for(i = 0; i < cursor.length; i++){
