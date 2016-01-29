@@ -13,7 +13,8 @@ Meteor.startup(function() {
 	  return false;
 	},
 	getVideos: function() {
-		cursor = db.query('MATCH (n:Video)-[r:HAS]-(m:Tag) RETURN DISTINCT n, m');
+		
+		cursor = db.query(' MATCH (a:Video)-[r:HAS_TAG]-(b:Tag) RETURN a, collect(b)');
 		var cursor;
 		console.log(cursor.fetch());
 		
@@ -22,9 +23,6 @@ Meteor.startup(function() {
 			videos.push({title:data.n.properties.get('title'), url:data.n.properties.get('url'), tags:data.m.properties.get('name'), _id:data.n.properties.get('id')});
 		});
 		
-		/*for(i = 0; i < cursor.length; i++){
-			videos.push({title:cursor[i].n.title, url:cursor[i].n.url});
-		}*/
 		console.log(videos);
 	  return videos;
 	}

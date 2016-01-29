@@ -21,3 +21,7 @@ insecure                # Allow all DB writes from clients (for prototyping)
 ostrio:neo4jdriver
 coffeescript
 react
+meteorhacks:npm
+
+
+npm-container

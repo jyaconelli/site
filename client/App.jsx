@@ -7,6 +7,7 @@ App = React.createClass({
 				Session.set('videos', data);
 			}
 		});
+		console.log(Session.get('videos'));
 		
 		return Session.get('videos');
 		
